@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Edit</title>
+</head>
+
+<body>
+
+    <h2>Edit the page.</h2>
+    <div class="box">
+        <p>id: <%= book.id %>
+        </p>
+        <form action="/books/<%= book.id %>?_method=PATCH" method="post">
+            <p>Title : </p>
+            <textarea name="title" id="title" cols="30" rows="5"><%= book.title %></textarea>
+            <p>Author : </p>
+            <textarea name="author" id="author" cols="30" rows="5"><%= book.author %></textarea><br><br>
+            <button>Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

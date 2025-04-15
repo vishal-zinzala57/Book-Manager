@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>All books</title>
+</head>
+
+<body>
+
+    <h2>All Books are here !</h2>
+    <div class="container">
+        <% for(let book of arBooks){ %>
+            <div class="book">
+                <p>title : <%= book.title %>
+                </p>
+                <p>author : <%= book.author %>
+                </p><br>
+                <div class="links">
+                    <a href="/books/<%= book.id %>">Show book</a>
+                    <a href="/books/<%= book.id %>/edit">Edit</a>
+                    <form method="post" action="/books/<%= book.id %>?_method=DELETE">
+                        <button id="Sub">Delete</button>
+                    </form>
+                </div>
+
+            </div>
+            <% } %>
+    </div>
+    <br><br>
+
+ <div class="text-contener">
+    <a href="/books/new">Add new book</a>
+ </div>
+</body>
+
+</html>
